@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:backgroundTint="#f0f8ffff"
     android:background="@android:color/white">
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
@@ -13,7 +12,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
         android:max="10"
-        android:progress="0" />
+        android:progress="0"
+        android:visibility="invisible" />
     <Button
         android:text="Play"
         android:layout_width="match_parent"

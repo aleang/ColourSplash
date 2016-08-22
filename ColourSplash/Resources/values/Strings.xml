@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">ColourSplash</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">Colour Vomit</string>
+  <color name="indianred">#CD5C5C</color>
+  <color name="crimson">#DC143C</color>
+  <color name="red">#ff0000</color>
+  <color name="firebrick">#b22222</color>
+
+  <color name="pink">#ffc0cb</color>
+  <color name="lightpink">#ffb6c1</color>
+  <color name="hotpink">#ff69b4</color>
+  <color name="deeppink">#ff1493</color>
+  <color name="fuchsia">#ff00ff</color>
+
+  <color name="tomato">#ff6347</color>
+  <color name="orange">#ffa500</color>
+  <color name="coral">#ff7f50</color>
+  <color name="darkorange">#ff8c00</color>
+
+  <color name="lime">#00ff00</color>
+  <color name="limegreen">#32cd32</color>
+  <color name="palegreen">#98fb98</color>
+  <color name="springgreen">#00ff7f</color>
+  <color name="yellowgreen">#9acd32</color>
+  <color name="olivedrab">#6b8e23</color>
+
+  <color name="skyblue">#87cefa</color>
+  <color name="deepskyblue">#00bfff</color>
+  <color name="dodgerblue">#1e90ff</color>
+  <color name="steelblue">#4682b4</color>
+  <color name="powderblue">#b0e0e6</color>
+  <color name="cornflowerblue">#6495ed</color>
+
+  <color name="tan">#d2b48c</color>
+  <color name="peru">#cd853f</color>
+  <color name="chocolate">#d2691e</color>
+  <color name="sienna">#a0522d</color>
+  <color name="saddlebrown">#8b4513</color>
+  <color name="brown">#800000</color>
+
+  <color name="bainsboro">#dcdcdc</color>
+  <color name="silver">#c0c0c0</color>
+  <color name="lightgray">#d3d3d3</color>
+  <color name="slategray">#708090</color>
+
+  <color name="blueviolet">#8a2be2</color>
+  <color name="darkviolet">#9400d3</color>
+  <color name="darkorchid">#9932cc</color>
+  <color name="purple">#800080</color>
+
 </resources>
