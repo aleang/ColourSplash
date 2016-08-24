@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:max="10"
+        android:max="1000"
         android:progress="0"
         android:visibility="invisible" />
     <Button

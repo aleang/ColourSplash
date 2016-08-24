@@ -25,7 +25,7 @@ namespace ColourSplash
         private List<ColourTile> tiles;
         private DateTime lastClicked;
         private DateTime startTime;
-
+        private int _mistakes;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -72,26 +72,43 @@ namespace ColourSplash
             {
                 clicked.Enabled = false;
                 clicked.Background = GetDrawable(Android.Resource.Color.Black);
+                _mistakes++;
             }
             lastClicked = DateTime.Now;
         }
 
         private void CheckIfGameIsFinished()
         {
-            if (progressBar.Progress == progressBar.Max)
+            if (progressBar.Progress >= progressBar.Max-100)
             {
-                var time = GetDisplayTime();
-
-                progressBar.Visibility = ViewStates.Invisible;
-                gameButtons.ForEach(b => b.Visibility = ViewStates.Invisible);
-                playButton.Visibility = ViewStates.Visible;
-
+                var time = GetGameResult();
+                AnimateTheProgressBar(progressBar.Max-100);
                 var dialog = new AlertDialog.Builder(this);
                 dialog.SetTitle("You've made it!");
-                dialog.SetMessage(GetDisplayTime());
+                dialog.SetCancelable(false); ;
+                dialog.SetPositiveButton("Play",
+                                         handler: delegate
+                                         {
+                                             progressBar.Visibility = ViewStates.Invisible;
+                                             gameButtons.ForEach(b => b.Visibility = ViewStates.Invisible);
+                                             playButton.Visibility = ViewStates.Visible;
+                                         });
+                dialog.SetMessage(time);
                 dialog.Show();
-
             }
+            else
+            {
+                AnimateTheProgressBar(progressBar.Progress);
+            }
+        }
+
+        private void AnimateTheProgressBar(int progress)
+        {
+
+            ObjectAnimator animation = ObjectAnimator.OfInt(progressBar, "Progress", progress, (progress / 100 + 1) * 100);
+            animation.SetDuration(500);
+            animation.SetInterpolator(new DecelerateInterpolator());
+            animation.Start();
         }
 
         private TimeSpan GetElapsedTime()
@@ -101,11 +118,14 @@ namespace ColourSplash
                 DateTime.Now - startTime;
         }
 
-        private string GetDisplayTime()
+        private string GetGameResult()
         {
+            var elapsedTime = GetElapsedTime();
             var displayString = "You took ";
-            displayString += GetElapsedTime().ToString("ss\\.ff");
-            displayString += " seconds to complete 10 rounds. Press Play to try again.";
+            displayString += elapsedTime.ToString("ss\\.ff");
+            displayString += " seconds to complete 10 rounds.\n\n" +
+                             $"You also made {_mistakes} mistake{(_mistakes == 1 ? "" : "s")}.\n\n" +
+                             $"Your score is {50 - (_mistakes*2 + (int)elapsedTime.TotalSeconds)}";
             return displayString;
         }
 
@@ -123,7 +143,7 @@ namespace ColourSplash
                                                    progressBar.Progress = -1;
                                                    gameButtons.ForEach(b => b.Visibility = ViewStates.Visible);
                                                });
-            dialog.SetMessage("Four buttons will display with a colour word. Pick the one which is coloured differently to the word. There will be 10 rounds before your time is displayed. Try to be the fastest.\nTimer starts when you press \"Play\"");
+            dialog.SetMessage("Four buttons will display with a colour word. Pick the one which is coloured differently to the word. Try to be the fastest to complete 10 rounds.\n\nThe timer starts when you press \"Play\"");
             dialog.Show();
 
             LoadSetOfColours();
@@ -131,13 +151,6 @@ namespace ColourSplash
 
         private void LoadSetOfColours()
         {
-            //progressBar.IncrementProgressBy(1);
-            var progress = progressBar.Progress;
-            ObjectAnimator animation = ObjectAnimator.OfInt(progressBar, "Progress", 3, 7);
-            animation.SetDuration(500); // 0.5 second
-            animation.SetInterpolator(new LinearInterpolator());
-            animation.Start();
-
             var db = new ColourTileRepository();
             tiles = db.GetNewSetOfTiles();
             for (int i = 0; i < 4; i++)
