@@ -202,6 +202,12 @@ namespace ColourSplash
 			// aapt resource value: 0x7f060005
 			public const int button4 = 2131099653;
 			
+			// aapt resource value: 0x7f060007
+			public const int fragmentContainer = 2131099655;
+			
+			// aapt resource value: 0x7f060006
+			public const int highscoreListView = 2131099654;
+			
 			// aapt resource value: 0x7f060001
 			public const int playButton = 2131099649;
 			
@@ -222,7 +228,13 @@ namespace ColourSplash
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int GameFragment = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int HighScoreFragment = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int MainView = 2130903042;
 			
 			static Layout()
 			{

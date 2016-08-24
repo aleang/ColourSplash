@@ -49,18 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ColourTile.cs" />
-    <Compile Include="ColourTileRepository.cs" />
+    <Compile Include="Fragments\HighscoreFragment.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\ColourTile.cs" />
+    <Compile Include="Repository\ColourTileRepository.cs" />
+    <Compile Include="Fragments\GameFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\layout\HighScoreFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\GameFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml">
+    <AndroidResource Include="Resources\layout\MainView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
