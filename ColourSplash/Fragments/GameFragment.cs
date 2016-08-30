@@ -95,8 +95,9 @@ namespace ColourSplash
 
 		private void DisplaySaveScoreDialog()
 		{
+			HighScoreDatabase.OpenDatabase();
 			HighScoreDatabase.CreateBogusHighScore();
-			
+			HighScoreDatabase.CloseConnection();
 		}
 
 		private void ResetViewsAfterGame()

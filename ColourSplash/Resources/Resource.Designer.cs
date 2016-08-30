@@ -208,17 +208,26 @@ namespace ColourSplash
 			// aapt resource value: 0x7f060007
 			public const int clearHighScore = 2131099655;
 			
-			// aapt resource value: 0x7f060009
-			public const int fragmentContainer = 2131099657;
+			// aapt resource value: 0x7f06000c
+			public const int fragmentContainer = 2131099660;
 			
 			// aapt resource value: 0x7f060008
 			public const int highscoreListView = 2131099656;
+			
+			// aapt resource value: 0x7f060009
+			public const int linearLayout1 = 2131099657;
+			
+			// aapt resource value: 0x7f06000a
+			public const int name = 2131099658;
 			
 			// aapt resource value: 0x7f060001
 			public const int playButton = 2131099649;
 			
 			// aapt resource value: 0x7f060000
 			public const int progressBar = 2131099648;
+			
+			// aapt resource value: 0x7f06000b
+			public const int score = 2131099659;
 			
 			static Id()
 			{
@@ -240,7 +249,10 @@ namespace ColourSplash
 			public const int HighScoreFragment = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int MainView = 2130903042;
+			public const int HighScoreListView = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int MainView = 2130903043;
 			
 			static Layout()
 			{

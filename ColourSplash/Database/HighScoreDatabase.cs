@@ -22,35 +22,29 @@ namespace ColourSplash.Database
 
         public static void OpenDatabase()
         {
-            CheckIfTableExistThenMake();
-            _db = new SQLiteConnection(dbPath);
-            var result = _db.CreateTable<HighScore>();
-            var firstEntry = _db.Get<HighScore>(1);
-            if (firstEntry == null)
+            if (!System.IO.File.Exists(dbPath))
             {
-                InsertHighScore("PLT", 21);
-            }
-        }
-
-        public static void CheckIfTableExistThenMake()
-        {
-            if (!System.IO.File.Exists(dbPath)) {
                 File.Create(dbPath);
             }
+            _db = new SQLiteConnection(dbPath);
+            var result = _db.CreateTable<HighScore>();
+            //var count = _db.Query<int>("SELECT COUNT(*) FROM HighScore").First();
+            //if (count == 0) InsertHighScore("PLT", 21);
+            
         }
-
+        
         public static void InsertHighScore(string name, int score)
         {
             if (_db == null) OpenDatabase();
             _db.Insert(new HighScore { Name = name.ToUpper(), Score = score });
         }
-        public static List<string> ReadDatabase()
+        public static List<HighScore> ReadDatabase()
         {
-            var highScores = _db.Query<HighScore>(
+            var result = _db.Query<HighScore>(
                 "SELECT *" +
                 "FROM HighScore " +
                 "ORDER BY Score DESC");
-            return highScores.Select(h => h.ToString()).ToList();
+            return result;
         }
 
         public static void ClearDatabase()
@@ -62,7 +56,7 @@ namespace ColourSplash.Database
         public static void CreateBogusHighScore()
         {
             if (_db == null) OpenDatabase();
-            _db.Insert(new HighScore { Name = "ABC", Score = new Random().Next() });
+            _db.Insert(new HighScore { Name = "ABC", Score = new Random().Next(100) });
 
         }
 

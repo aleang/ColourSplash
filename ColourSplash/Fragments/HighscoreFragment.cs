@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using ColourSplash.Adapter;
 using ColourSplash.Database;
 using ColourSplash.Models;
 using SQLite;
@@ -14,9 +16,9 @@ namespace ColourSplash.Fragments
     {
         private ListView highscoreListView;
         private string _path;
-        private Button highScoreButton
-            ;
+        private Button highScoreButton;
         private Button clearHighScoreButton;
+        private List<HighScore> _highScoreItems;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +33,7 @@ namespace ColourSplash.Fragments
             FindViews();
             OpenDatabaseConnection();
             LoadHighScores();
+           
         }
 
         public override void OnDestroy()
@@ -40,13 +43,9 @@ namespace ColourSplash.Fragments
         }
         private void LoadHighScores()
         {
-            
-            var items = HighScoreDatabase.ReadDatabase();
+            _highScoreItems = HighScoreDatabase.ReadDatabase();
 
-            highscoreListView.Adapter = new ArrayAdapter<string>(
-                View.Context, 
-                Android.Resource.Layout.SimpleListItem1, 
-                items);
+            highscoreListView.Adapter = new HighScoreAdapter(Activity, _highScoreItems);
         }
 
         private void OpenDatabaseConnection()
@@ -57,12 +56,12 @@ namespace ColourSplash.Fragments
         private void FindViews()
         {
             highscoreListView = View.FindViewById<ListView>(Resource.Id.highscoreListView);
+
             highScoreButton = View.FindViewById<Button>(Resource.Id.addFakeHighScore);
             highScoreButton.Click += delegate {
-                                         HighScoreDatabase.CreateBogusHighScore();
+                HighScoreDatabase.CreateBogusHighScore();
                 LoadHighScores();
-
-                                     };
+            };
 
             clearHighScoreButton = View.FindViewById<Button>(Resource.Id.clearHighScore);
             clearHighScoreButton.Click += delegate {

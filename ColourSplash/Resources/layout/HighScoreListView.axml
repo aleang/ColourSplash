@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@android:color/white">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="180dp"
+            android:layout_height="fill_parent"
+            android:textSize="25dp"
+            android:text="PLT"
+            android:gravity="right"
+            android:textAllCaps="true"
+            android:textColor="@color/cornflowerblue"
+            android:paddingRight="30px" />
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="25dp"
+            android:text="25"
+            android:textColor="@color/cornflowerblue" />
+    </LinearLayout>
+</RelativeLayout>
