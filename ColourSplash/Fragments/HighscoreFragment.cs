@@ -1,21 +1,22 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
+using ColourSplash.Database;
+using ColourSplash.Models;
+using SQLite;
+using SQLiteException = Android.Database.Sqlite.SQLiteException;
 
 namespace ColourSplash.Fragments
 {
     public class HighscoreFragment : Fragment
     {
         private ListView highscoreListView;
+        private string _path;
+        private Button highScoreButton
+            ;
+        private Button clearHighScoreButton;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,21 +29,46 @@ namespace ColourSplash.Fragments
             base.OnActivityCreated(bundle);
 
             FindViews();
-            FindHighScores();
+            OpenDatabaseConnection();
+            LoadHighScores();
         }
 
-        private void FindHighScores()
+        public override void OnDestroy()
         {
-            var items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers" };
-            highscoreListView.Adapter = new ArrayAdapter<String>(
+            HighScoreDatabase.CloseConnection();
+            base.OnDestroy();
+        }
+        private void LoadHighScores()
+        {
+            
+            var items = HighScoreDatabase.ReadDatabase();
+
+            highscoreListView.Adapter = new ArrayAdapter<string>(
                 View.Context, 
                 Android.Resource.Layout.SimpleListItem1, 
                 items);
         }
 
+        private void OpenDatabaseConnection()
+        {
+            HighScoreDatabase.OpenDatabase();
+        }
+
         private void FindViews()
         {
-            highscoreListView = this.View.FindViewById<ListView>(Resource.Id.highscoreListView);
+            highscoreListView = View.FindViewById<ListView>(Resource.Id.highscoreListView);
+            highScoreButton = View.FindViewById<Button>(Resource.Id.addFakeHighScore);
+            highScoreButton.Click += delegate {
+                                         HighScoreDatabase.CreateBogusHighScore();
+                LoadHighScores();
+
+                                     };
+
+            clearHighScoreButton = View.FindViewById<Button>(Resource.Id.clearHighScore);
+            clearHighScoreButton.Click += delegate {
+                HighScoreDatabase.ClearDatabase();
+                LoadHighScores();
+            };
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

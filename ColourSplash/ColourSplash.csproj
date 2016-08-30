@@ -49,18 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\HighScoreDatabase.cs" />
     <Compile Include="Fragments\HighscoreFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\ColourTile.cs" />
+    <Compile Include="Models\HighScore.cs" />
     <Compile Include="Repository\ColourTileRepository.cs" />
     <Compile Include="Fragments\GameFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\HighScoreFragment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\GameFragment.axml">
@@ -73,7 +78,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

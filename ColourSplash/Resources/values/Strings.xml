@@ -2,6 +2,9 @@
 <resources>
   <string name="Hello">Hello World, Click Me!</string>
   <string name="ApplicationName">Colour Vomit</string>
+  <string name="HighScoreFileDirectory">/sdcard/Android/data/ColourSplash.ColourSplash/</string>
+  <string name="FileName">highscore.txt</string>
+  
   <color name="indianred">#CD5C5C</color>
   <color name="crimson">#DC143C</color>
   <color name="red">#ff0000</color>

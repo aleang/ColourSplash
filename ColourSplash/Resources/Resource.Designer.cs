@@ -190,6 +190,9 @@ namespace ColourSplash
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f060006
+			public const int addFakeHighScore = 2131099654;
+			
 			// aapt resource value: 0x7f060002
 			public const int button1 = 2131099650;
 			
@@ -203,10 +206,13 @@ namespace ColourSplash
 			public const int button4 = 2131099653;
 			
 			// aapt resource value: 0x7f060007
-			public const int fragmentContainer = 2131099655;
+			public const int clearHighScore = 2131099655;
 			
-			// aapt resource value: 0x7f060006
-			public const int highscoreListView = 2131099654;
+			// aapt resource value: 0x7f060009
+			public const int fragmentContainer = 2131099657;
+			
+			// aapt resource value: 0x7f060008
+			public const int highscoreListView = 2131099656;
 			
 			// aapt resource value: 0x7f060001
 			public const int playButton = 2131099649;
@@ -252,8 +258,14 @@ namespace ColourSplash
 			// aapt resource value: 0x7f040001
 			public const int ApplicationName = 2130968577;
 			
+			// aapt resource value: 0x7f040003
+			public const int FileName = 2130968579;
+			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int HighScoreFileDirectory = 2130968578;
 			
 			static String()
 			{
