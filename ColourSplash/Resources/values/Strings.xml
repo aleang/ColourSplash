@@ -4,6 +4,8 @@
   <string name="ApplicationName">Colour Vomit</string>
   <string name="HighScoreFileDirectory">/sdcard/Android/data/ColourSplash.ColourSplash/</string>
   <string name="FileName">highscore.txt</string>
+
+  <string name="ProgressBarMax">1000</string>
   
   <color name="indianred">#CD5C5C</color>
   <color name="crimson">#DC143C</color>

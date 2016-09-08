@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Android.App;
 using Android.OS;
@@ -7,8 +6,6 @@ using Android.Widget;
 using ColourSplash.Adapter;
 using ColourSplash.Database;
 using ColourSplash.Models;
-using SQLite;
-using SQLiteException = Android.Database.Sqlite.SQLiteException;
 
 namespace ColourSplash.Fragments
 {
@@ -59,7 +56,7 @@ namespace ColourSplash.Fragments
 
             highScoreButton = View.FindViewById<Button>(Resource.Id.addFakeHighScore);
             highScoreButton.Click += delegate {
-                HighScoreDatabase.CreateBogusHighScore();
+                HighScoreDatabase.InsertHighScore("PHE", 12);
                 LoadHighScores();
             };
 

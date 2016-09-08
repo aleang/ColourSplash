@@ -7,7 +7,7 @@ namespace ColourSplash.Models
     {
        
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [NotNull, MaxLength(3)]
         public string Name { get; set; }
@@ -16,7 +16,7 @@ namespace ColourSplash.Models
 
         public override string ToString()
         {
-            return $"{Name} {Score}";
+            return $"{Name} {Score} sec";
         }
     }
 }

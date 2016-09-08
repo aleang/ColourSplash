@@ -59,6 +59,7 @@
     <Compile Include="Fragments\GameFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fragments\SaveNameDialogFragment.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
   </ItemGroup>
@@ -91,6 +92,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\HighScoreListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SaveHighScoreDialog.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

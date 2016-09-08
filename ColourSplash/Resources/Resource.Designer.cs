@@ -223,6 +223,9 @@ namespace ColourSplash
 			// aapt resource value: 0x7f060001
 			public const int playButton = 2131099649;
 			
+			// aapt resource value: 0x7f06000d
+			public const int playerNameTextField = 2131099661;
+			
 			// aapt resource value: 0x7f060000
 			public const int progressBar = 2131099648;
 			
@@ -254,6 +257,9 @@ namespace ColourSplash
 			// aapt resource value: 0x7f030003
 			public const int MainView = 2130903043;
 			
+			// aapt resource value: 0x7f030004
+			public const int SaveHighScoreDialog = 2130903044;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -278,6 +284,9 @@ namespace ColourSplash
 			
 			// aapt resource value: 0x7f040002
 			public const int HighScoreFileDirectory = 2130968578;
+			
+			// aapt resource value: 0x7f040004
+			public const int ProgressBarMax = 2130968580;
 			
 			static String()
 			{

@@ -27,10 +27,15 @@ namespace ColourSplash
             return resultList.OrderBy(a => Guid.NewGuid()).ToList();
         }
 
-        public int GetTheWrongColour(string name)
+        public int GetTheWrongColour(string name, List<ColourTile> existingColours)
         {
-            var eligibleColours = ColourTiles.Where(c => c.Name != name).SelectMany(c => c.ColorIds).ToList();
-            var resultColour = eligibleColours.ElementAt(new Random().Next(eligibleColours.Count));
+            var eligibleColours = ColourTiles
+                .Where(c => c.Name != name)
+                .SelectMany(c => c.ColorIds)
+                .ToList();
+            var resultColour = eligibleColours
+                .ElementAt(new Random()
+                .Next(eligibleColours.Count));
             return resultColour;
         }
 
