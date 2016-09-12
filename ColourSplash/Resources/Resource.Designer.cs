@@ -44,122 +44,122 @@ namespace ColourSplash
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f05001f
-			public const int bainsboro = 2131034143;
-			
-			// aapt resource value: 0x7f050023
-			public const int blueviolet = 2131034147;
-			
-			// aapt resource value: 0x7f05001e
-			public const int brown = 2131034142;
-			
-			// aapt resource value: 0x7f05001b
-			public const int chocolate = 2131034139;
-			
-			// aapt resource value: 0x7f05000b
-			public const int coral = 2131034123;
-			
 			// aapt resource value: 0x7f050018
-			public const int cornflowerblue = 2131034136;
-			
-			// aapt resource value: 0x7f050001
-			public const int crimson = 2131034113;
-			
-			// aapt resource value: 0x7f05000c
-			public const int darkorange = 2131034124;
-			
-			// aapt resource value: 0x7f050025
-			public const int darkorchid = 2131034149;
-			
-			// aapt resource value: 0x7f050024
-			public const int darkviolet = 2131034148;
-			
-			// aapt resource value: 0x7f050007
-			public const int deeppink = 2131034119;
+			public const int BLU_cornflowerblue = 2131034136;
 			
 			// aapt resource value: 0x7f050014
-			public const int deepskyblue = 2131034132;
+			public const int BLU_deepskyblue = 2131034132;
 			
 			// aapt resource value: 0x7f050015
-			public const int dodgerblue = 2131034133;
-			
-			// aapt resource value: 0x7f050003
-			public const int firebrick = 2131034115;
-			
-			// aapt resource value: 0x7f050008
-			public const int fuchsia = 2131034120;
-			
-			// aapt resource value: 0x7f050006
-			public const int hotpink = 2131034118;
-			
-			// aapt resource value: 0x7f050000
-			public const int indianred = 2131034112;
-			
-			// aapt resource value: 0x7f050021
-			public const int lightgray = 2131034145;
-			
-			// aapt resource value: 0x7f050005
-			public const int lightpink = 2131034117;
-			
-			// aapt resource value: 0x7f05000d
-			public const int lime = 2131034125;
-			
-			// aapt resource value: 0x7f05000e
-			public const int limegreen = 2131034126;
-			
-			// aapt resource value: 0x7f050012
-			public const int olivedrab = 2131034130;
-			
-			// aapt resource value: 0x7f05000a
-			public const int orange = 2131034122;
-			
-			// aapt resource value: 0x7f05000f
-			public const int palegreen = 2131034127;
-			
-			// aapt resource value: 0x7f05001a
-			public const int peru = 2131034138;
-			
-			// aapt resource value: 0x7f050004
-			public const int pink = 2131034116;
+			public const int BLU_dodgerblue = 2131034133;
 			
 			// aapt resource value: 0x7f050017
-			public const int powderblue = 2131034135;
-			
-			// aapt resource value: 0x7f050026
-			public const int purple = 2131034150;
-			
-			// aapt resource value: 0x7f050002
-			public const int red = 2131034114;
-			
-			// aapt resource value: 0x7f05001d
-			public const int saddlebrown = 2131034141;
-			
-			// aapt resource value: 0x7f05001c
-			public const int sienna = 2131034140;
-			
-			// aapt resource value: 0x7f050020
-			public const int silver = 2131034144;
+			public const int BLU_powderblue = 2131034135;
 			
 			// aapt resource value: 0x7f050013
-			public const int skyblue = 2131034131;
-			
-			// aapt resource value: 0x7f050022
-			public const int slategray = 2131034146;
-			
-			// aapt resource value: 0x7f050010
-			public const int springgreen = 2131034128;
+			public const int BLU_skyblue = 2131034131;
 			
 			// aapt resource value: 0x7f050016
-			public const int steelblue = 2131034134;
+			public const int BLU_steelblue = 2131034134;
+			
+			// aapt resource value: 0x7f05001e
+			public const int BRO_brown = 2131034142;
+			
+			// aapt resource value: 0x7f05001b
+			public const int BRO_chocolate = 2131034139;
+			
+			// aapt resource value: 0x7f05001a
+			public const int BRO_peru = 2131034138;
+			
+			// aapt resource value: 0x7f05001d
+			public const int BRO_saddlebrown = 2131034141;
+			
+			// aapt resource value: 0x7f05001c
+			public const int BRO_sienna = 2131034140;
 			
 			// aapt resource value: 0x7f050019
-			public const int tan = 2131034137;
+			public const int BRO_tan = 2131034137;
 			
-			// aapt resource value: 0x7f050009
-			public const int tomato = 2131034121;
+			// aapt resource value: 0x7f05000d
+			public const int GRE_lime = 2131034125;
+			
+			// aapt resource value: 0x7f05000e
+			public const int GRE_limegreen = 2131034126;
+			
+			// aapt resource value: 0x7f050012
+			public const int GRE_olivedrab = 2131034130;
+			
+			// aapt resource value: 0x7f05000f
+			public const int GRE_palegreen = 2131034127;
+			
+			// aapt resource value: 0x7f050010
+			public const int GRE_springgreen = 2131034128;
 			
 			// aapt resource value: 0x7f050011
-			public const int yellowgreen = 2131034129;
+			public const int GRE_yellowgreen = 2131034129;
+			
+			// aapt resource value: 0x7f05001f
+			public const int GRY_bainsboro = 2131034143;
+			
+			// aapt resource value: 0x7f050021
+			public const int GRY_lightgray = 2131034145;
+			
+			// aapt resource value: 0x7f050020
+			public const int GRY_silver = 2131034144;
+			
+			// aapt resource value: 0x7f050022
+			public const int GRY_slategray = 2131034146;
+			
+			// aapt resource value: 0x7f05000b
+			public const int ORA_coral = 2131034123;
+			
+			// aapt resource value: 0x7f05000c
+			public const int ORA_darkorange = 2131034124;
+			
+			// aapt resource value: 0x7f05000a
+			public const int ORA_orange = 2131034122;
+			
+			// aapt resource value: 0x7f050009
+			public const int ORA_tomato = 2131034121;
+			
+			// aapt resource value: 0x7f050007
+			public const int PIN_deeppink = 2131034119;
+			
+			// aapt resource value: 0x7f050008
+			public const int PIN_fuchsia = 2131034120;
+			
+			// aapt resource value: 0x7f050006
+			public const int PIN_hotpink = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int PIN_lightpink = 2131034117;
+			
+			// aapt resource value: 0x7f050004
+			public const int PIN_pink = 2131034116;
+			
+			// aapt resource value: 0x7f050023
+			public const int PUR_blueviolet = 2131034147;
+			
+			// aapt resource value: 0x7f050025
+			public const int PUR_darkorchid = 2131034149;
+			
+			// aapt resource value: 0x7f050024
+			public const int PUR_darkviolet = 2131034148;
+			
+			// aapt resource value: 0x7f050026
+			public const int PUR_purple = 2131034150;
+			
+			// aapt resource value: 0x7f050001
+			public const int RED_crimson = 2131034113;
+			
+			// aapt resource value: 0x7f050003
+			public const int RED_firebrick = 2131034115;
+			
+			// aapt resource value: 0x7f050000
+			public const int RED_indianred = 2131034112;
+			
+			// aapt resource value: 0x7f050002
+			public const int RED_red = 2131034114;
 			
 			static Color()
 			{

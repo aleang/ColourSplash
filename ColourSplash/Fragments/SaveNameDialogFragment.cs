@@ -2,14 +2,19 @@ using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using ColourSplash;
-using ColourSplash.Database;
-using Java.Lang;
+using ColourSplase;
 
 namespace ColourSplash.Fragments
 {
     public class SaveNameDialogFragment : DialogFragment
     {
+        private int finalScore;
+
+        public SaveNameDialogFragment(int finalScore)
+        {
+            this.finalScore = finalScore;
+        }
+
         public override Dialog OnCreateDialog(Bundle savedInstanceState)
         {
             // Use the Builder class for convenient dialog construction
@@ -18,22 +23,21 @@ namespace ColourSplash.Fragments
             LayoutInflater inflater = Activity.LayoutInflater;
             //builder.SetMessage("123")
 
-            var DialogAsView = inflater.Inflate(Resource.Layout.SaveHighScoreDialog, null);
-            builder.SetView(DialogAsView)
+            var dialogAsView = inflater.Inflate(Resource.Layout.SaveHighScoreDialog, null);
+            builder.SetView(dialogAsView)
                 .SetTitle("Please enter your name...")
                 .SetMessage("Please enter your initials (3 letters max).")
                 .SetPositiveButton(
                     "Save",
                     delegate
                     {
-                        var textField = DialogAsView.FindViewById<TextView>(Resource.Id.playerNameTextField);
+                        var textField = dialogAsView.FindViewById<TextView>(Resource.Id.playerNameTextField);
                         HighScoreDatabase.OpenDatabase();
-                        HighScoreDatabase.InsertHighScore(textField.Text, GameFragment.FinalScore);
+                        HighScoreDatabase.InsertHighScore(textField.Text, finalScore);
                         HighScoreDatabase.CloseConnection();
                     });
             
             return builder.Create();
         }
-        
     }
 }

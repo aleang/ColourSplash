@@ -20,7 +20,7 @@
             android:text="PLT"
             android:gravity="right"
             android:textAllCaps="true"
-            android:textColor="@color/cornflowerblue"
+            android:textColor="@color/BLU_cornflowerblue"
             android:paddingRight="30px" />
         <TextView
             android:id="@+id/score"
@@ -28,6 +28,6 @@
             android:layout_height="fill_parent"
             android:textSize="25dp"
             android:text="25"
-            android:textColor="@color/cornflowerblue" />
+            android:textColor="@color/BLU_cornflowerblue" />
     </LinearLayout>
 </RelativeLayout>

@@ -7,51 +7,51 @@
 
   <string name="ProgressBarMax">1000</string>
   
-  <color name="indianred">#CD5C5C</color>
-  <color name="crimson">#DC143C</color>
-  <color name="red">#ff0000</color>
-  <color name="firebrick">#b22222</color>
+  <color name="RED_indianred">#CD5C5C</color>
+  <color name="RED_crimson">#DC143C</color>
+  <color name="RED_red">#ff0000</color>
+  <color name="RED_firebrick">#b22222</color>
 
-  <color name="pink">#ffc0cb</color>
-  <color name="lightpink">#ffb6c1</color>
-  <color name="hotpink">#ff69b4</color>
-  <color name="deeppink">#ff1493</color>
-  <color name="fuchsia">#ff00ff</color>
+  <color name="PIN_pink">#ffc0cb</color>
+  <color name="PIN_lightpink">#ffb6c1</color>
+  <color name="PIN_hotpink">#ff69b4</color>
+  <color name="PIN_deeppink">#ff1493</color>
+  <color name="PIN_fuchsia">#ff00ff</color>
 
-  <color name="tomato">#ff6347</color>
-  <color name="orange">#ffa500</color>
-  <color name="coral">#ff7f50</color>
-  <color name="darkorange">#ff8c00</color>
+  <color name="ORA_tomato">#ff6347</color>
+  <color name="ORA_orange">#ffa500</color>
+  <color name="ORA_coral">#ff7f50</color>
+  <color name="ORA_darkorange">#ff8c00</color>
 
-  <color name="lime">#00ff00</color>
-  <color name="limegreen">#32cd32</color>
-  <color name="palegreen">#98fb98</color>
-  <color name="springgreen">#00ff7f</color>
-  <color name="yellowgreen">#9acd32</color>
-  <color name="olivedrab">#6b8e23</color>
+  <color name="GRE_lime">#00ff00</color>
+  <color name="GRE_limegreen">#32cd32</color>
+  <color name="GRE_palegreen">#98fb98</color>
+  <color name="GRE_springgreen">#00ff7f</color>
+  <color name="GRE_yellowgreen">#9acd32</color>
+  <color name="GRE_olivedrab">#6b8e23</color>
 
-  <color name="skyblue">#87cefa</color>
-  <color name="deepskyblue">#00bfff</color>
-  <color name="dodgerblue">#1e90ff</color>
-  <color name="steelblue">#4682b4</color>
-  <color name="powderblue">#b0e0e6</color>
-  <color name="cornflowerblue">#6495ed</color>
+  <color name="BLU_skyblue">#87cefa</color>
+  <color name="BLU_deepskyblue">#00bfff</color>
+  <color name="BLU_dodgerblue">#1e90ff</color>
+  <color name="BLU_steelblue">#4682b4</color>
+  <color name="BLU_powderblue">#b0e0e6</color>
+  <color name="BLU_cornflowerblue">#6495ed</color>
 
-  <color name="tan">#d2b48c</color>
-  <color name="peru">#cd853f</color>
-  <color name="chocolate">#d2691e</color>
-  <color name="sienna">#a0522d</color>
-  <color name="saddlebrown">#8b4513</color>
-  <color name="brown">#800000</color>
+  <color name="BRO_tan">#d2b48c</color>
+  <color name="BRO_peru">#cd853f</color>
+  <color name="BRO_chocolate">#d2691e</color>
+  <color name="BRO_sienna">#a0522d</color>
+  <color name="BRO_saddlebrown">#8b4513</color>
+  <color name="BRO_brown">#800000</color>
 
-  <color name="bainsboro">#dcdcdc</color>
-  <color name="silver">#c0c0c0</color>
-  <color name="lightgray">#d3d3d3</color>
-  <color name="slategray">#708090</color>
+  <color name="GRY_bainsboro">#dcdcdc</color>
+  <color name="GRY_silver">#c0c0c0</color>
+  <color name="GRY_lightgray">#d3d3d3</color>
+  <color name="GRY_slategray">#708090</color>
 
-  <color name="blueviolet">#8a2be2</color>
-  <color name="darkviolet">#9400d3</color>
-  <color name="darkorchid">#9932cc</color>
-  <color name="purple">#800080</color>
+  <color name="PUR_blueviolet">#8a2be2</color>
+  <color name="PUR_darkviolet">#9400d3</color>
+  <color name="PUR_darkorchid">#9932cc</color>
+  <color name="PUR_purple">#800080</color>
 
 </resources>

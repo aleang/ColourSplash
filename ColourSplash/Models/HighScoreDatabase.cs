@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,7 +5,7 @@ using ColourSplash.Models;
 using SQLite;
 using Environment = System.Environment;
 
-namespace ColourSplash.Database
+namespace ColourSplase
 {
     public static class HighScoreDatabase
     {
@@ -20,22 +19,22 @@ namespace ColourSplash.Database
             dbPath = Path.Combine(libraryPath, dbFileName);
         }
 
-        public static void OpenDatabase()
+        public static SQLiteConnection OpenDatabase()
         {
-            if (!System.IO.File.Exists(dbPath))
+            if (! File.Exists(dbPath))
             {
                 File.Create(dbPath);
             }
             _db = new SQLiteConnection(dbPath);
-            var result = _db.CreateTable<HighScore>();
-            
+            _db.CreateTable<HighScore>();
+            return _db;
         }
         
         public static void InsertHighScore(string name, int score)
         {
-            if (_db == null) OpenDatabase();
+            if (_db == null) _db = OpenDatabase();
 
-            if (string.IsNullOrEmpty(name) || name.Length > 3)
+            if (string.IsNullOrEmpty(name) || name.Length < 3)
             {
                 return;
             }

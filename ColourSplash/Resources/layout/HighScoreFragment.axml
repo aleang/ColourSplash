@@ -24,5 +24,5 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:id="@+id/highscoreListView"
-        android:background="@color/pink" />
+        android:background="@color/PIN_pink" />
 </LinearLayout>

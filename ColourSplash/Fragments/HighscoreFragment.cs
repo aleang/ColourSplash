@@ -3,8 +3,8 @@ using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using ColourSplase;
 using ColourSplash.Adapter;
-using ColourSplash.Database;
 using ColourSplash.Models;
 
 namespace ColourSplash.Fragments

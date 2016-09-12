@@ -25,7 +25,6 @@ namespace ColourSplash
 		private Stopwatch sw;
 		private int _mistakes;
 		private int _progressBarMax;
-		public static int FinalScore;
 
 		public override void OnActivityCreated(Bundle bundle)
 		{
@@ -33,7 +32,6 @@ namespace ColourSplash
 			FindViews();
 			HandleEvents();
 
-			FinalScore = 0;
 			_progressBarMax = int.Parse(Resources.GetString(Resource.String.ProgressBarMax));
 		}
 
@@ -73,21 +71,21 @@ namespace ColourSplash
 		{
 			if (progressBar.Progress >= _progressBarMax-100)
 			{
-				var gameResult = GetGameResult();
+			    int finalScore;
+				var gameResult = GetGameResult(out finalScore);
 				AnimateTheProgressBar(_progressBarMax-100);
 				var dialog = new AlertDialog.Builder(View.Context);
 				dialog.SetTitle("You've made it!");
 				dialog.SetCancelable(false); ;
 				dialog.SetPositiveButton("Play again", delegate { ResetViewsAfterGame(); });
 				dialog.SetNegativeButton("Save score",
-										 delegate
-										 {
-											 ResetViewsAfterGame();
-
-											 var saveDialog = new SaveNameDialogFragment();
-											 saveDialog.SetTargetFragment(this, 0);
-											 saveDialog.Show(FragmentManager, "SaveNameDialogFragment");
-										 });
+					delegate
+					{
+						ResetViewsAfterGame();
+						var saveDialog = new SaveNameDialogFragment(finalScore);
+						saveDialog.SetTargetFragment(this, 0);
+						saveDialog.Show(FragmentManager, "SaveNameDialogFragment");
+					});
 				dialog.SetMessage(gameResult);
 				dialog.Show();
 			}
@@ -103,7 +101,6 @@ namespace ColourSplash
 			gameButtons.ForEach(b => b.Visibility = ViewStates.Gone);
 			playButton.Visibility = ViewStates.Visible;
 		    _mistakes = 0;
-		    FinalScore = 0;
 		}
 
 		private void AnimateTheProgressBar(int progress)
@@ -114,11 +111,11 @@ namespace ColourSplash
 			animation.Start();
 		}
 
-		private string GetGameResult()
+		private string GetGameResult(out int finalScore)
 		{
 			sw.Stop();
 			var elapsedTime = sw.Elapsed;
-			FinalScore = (int) Math.Round(
+			finalScore = (int) Math.Round(
 				elapsedTime.TotalSeconds + _mistakes / 3, 
 				MidpointRounding.AwayFromZero);
 
@@ -126,7 +123,7 @@ namespace ColourSplash
 			displayString += elapsedTime.ToString("ss\\.ff");
 			displayString += " seconds.\n\n" +
 							 $"You also made {_mistakes} mistake{(_mistakes == 1 ? "" : "s")}.\n\n" +
-							 $"Your final time is {FinalScore} seconds.";
+							 $"Your final time is {finalScore} seconds.";
 
 			return displayString;
 		}
@@ -180,16 +177,16 @@ namespace ColourSplash
 
 		private void FindViews()
 		{
-			button1 = this.View.FindViewById<Button>(Resource.Id.button1);
-			button2 = this.View.FindViewById<Button>(Resource.Id.button2);
-			button3 = this.View.FindViewById<Button>(Resource.Id.button3);
-			button4 = this.View.FindViewById<Button>(Resource.Id.button4);
-			progressBar = this.View.FindViewById<ProgressBar>(Resource.Id.progressBar);
+			button1 = View.FindViewById<Button>(Resource.Id.button1);
+			button2 = View.FindViewById<Button>(Resource.Id.button2);
+			button3 = View.FindViewById<Button>(Resource.Id.button3);
+			button4 = View.FindViewById<Button>(Resource.Id.button4);
+			progressBar = View.FindViewById<ProgressBar>(Resource.Id.progressBar);
 			gameButtons = new List<Button>
 						  {
 							  button1, button2, button3, button4
 						  };
-			playButton = this.View.FindViewById<Button>(Resource.Id.playButton);
+			playButton = View.FindViewById<Button>(Resource.Id.playButton);
 
 		}
 
