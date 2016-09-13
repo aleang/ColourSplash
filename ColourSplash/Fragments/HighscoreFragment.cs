@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Android.App;
 using Android.OS;
@@ -41,7 +42,6 @@ namespace ColourSplash.Fragments
         private void LoadHighScores()
         {
             _highScoreItems = HighScoreDatabase.ReadDatabase();
-
             highscoreListView.Adapter = new HighScoreAdapter(Activity, _highScoreItems);
         }
 
@@ -56,14 +56,25 @@ namespace ColourSplash.Fragments
 
             highScoreButton = View.FindViewById<Button>(Resource.Id.addFakeHighScore);
             highScoreButton.Click += delegate {
-                HighScoreDatabase.InsertHighScore("PHE", 12);
+                HighScoreDatabase.InsertHighScore($"?{(char)('A' + new Random().Next(0, 26))}?", new Random().Next(40, 65));
                 LoadHighScores();
             };
 
             clearHighScoreButton = View.FindViewById<Button>(Resource.Id.clearHighScore);
             clearHighScoreButton.Click += delegate {
-                HighScoreDatabase.ClearDatabase();
-                LoadHighScores();
+
+                var dialog = new AlertDialog.Builder(View.Context);
+                dialog.SetTitle("Warning");
+                dialog.SetCancelable(true);
+                dialog.SetPositiveButton("Yes", delegate {
+                    HighScoreDatabase.ClearDatabase();
+                    LoadHighScores();
+                });
+                dialog.SetNegativeButton("Cancel", delegate { });
+                dialog.SetMessage("Are you sure you want to clear all the high scores?");
+                dialog.Show();
+
+                
             };
         }
 

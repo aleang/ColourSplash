@@ -27,19 +27,20 @@ namespace ColourSplash
             return resultList.OrderBy(a => Guid.NewGuid()).ToList();
         }
 
-        public int GetTheWrongColour(string name, List<ColourTile> existingColours)
+        public int GetTheWrongColour(string name, List<string> existingColours)
         {
             var eligibleColours = ColourTiles
                 .Where(c => 
                     c.Name != name && 
-                    existingColours.All(exCol => exCol.Name != c.Name) 
+                    existingColours.All(existingColour => existingColour != c.Name) 
                  )
                 .SelectMany(c => c.ColorIds)
                 .ToList();
 
             var resultColour = eligibleColours
                 .ElementAt(new Random()
-                .Next(eligibleColours.Count));
+                    .Next(eligibleColours.Count)
+                );
             return resultColour;
         }
 
@@ -52,11 +53,11 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.PIN_pink,
-                            Resource.Color.PIN_lightpink,
-                            Resource.Color.PIN_hotpink,
-                            Resource.Color.PIN_deeppink,
-                            Resource.Color.PIN_fuchsia,
+                            Resource.Color.pink,
+                            Resource.Color.lightpink,
+                            Resource.Color.hotpink,
+                            Resource.Color.deeppink,
+                            Resource.Color.fuchsia,
                         },
                 },
                 new ColourTile
@@ -65,10 +66,9 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.RED_crimson,
-                            Resource.Color.RED_indianred,
-                            Resource.Color.RED_red,
-                            Resource.Color.RED_firebrick,
+                            Resource.Color.crimson,
+                            Resource.Color.red,
+                            Resource.Color.firebrick,
                         },
                 },
                 new ColourTile
@@ -77,10 +77,9 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.ORA_darkorange,
-                            Resource.Color.ORA_orange,
-                            Resource.Color.ORA_tomato,
-                            Resource.Color.ORA_coral,
+                            Resource.Color.darkorange,
+                            Resource.Color.orange,
+                            Resource.Color.coral,
                         }
                 },
                 new ColourTile
@@ -89,12 +88,12 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.GRE_lime,
-                            Resource.Color.GRE_limegreen,
-                            Resource.Color.GRE_palegreen,
-                            Resource.Color.GRE_springgreen,
-                            Resource.Color.GRE_yellowgreen,
-                            Resource.Color.GRE_olivedrab,
+                            Resource.Color.lime,
+                            Resource.Color.limegreen,
+                            Resource.Color.palegreen,
+                            Resource.Color.springgreen,
+                            Resource.Color.yellowgreen,
+                            Resource.Color.olivedrab,
                         }
                 },
                 new ColourTile
@@ -103,12 +102,12 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.BLU_skyblue,
-                            Resource.Color.BLU_deepskyblue,
-                            Resource.Color.BLU_dodgerblue,
-                            Resource.Color.BLU_steelblue,
-                            Resource.Color.BLU_powderblue,
-                            Resource.Color.BLU_cornflowerblue,
+                            Resource.Color.skyblue,
+                            Resource.Color.deepskyblue,
+                            Resource.Color.dodgerblue,
+                            Resource.Color.steelblue,
+                            Resource.Color.powderblue,
+                            Resource.Color.cornflowerblue,
                         }
                 },
                 new ColourTile
@@ -117,12 +116,10 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.BRO_tan,
-                            Resource.Color.BRO_chocolate,
-                            Resource.Color.BRO_peru,
-                            Resource.Color.BRO_sienna,
-                            Resource.Color.BRO_saddlebrown,
-                            Resource.Color.BRO_brown,
+                            Resource.Color.peru,
+                            Resource.Color.sienna,
+                            Resource.Color.saddlebrown,
+                            Resource.Color.brown,
                         }
                 },
                 new ColourTile
@@ -131,10 +128,10 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.GRY_slategray,
-                            Resource.Color.GRY_silver,
-                            Resource.Color.GRY_bainsboro,
-                            Resource.Color.GRY_lightgray,
+                            Resource.Color.slategray,
+                            Resource.Color.silver,
+                            Resource.Color.bainsboro,
+                            Resource.Color.lightgray,
                         }
                 },
                 new ColourTile
@@ -143,10 +140,10 @@ namespace ColourSplash
                     ColorIds =
                         new[]
                         {
-                            Resource.Color.PUR_purple,
-                            Resource.Color.PUR_blueviolet,
-                            Resource.Color.PUR_darkviolet,
-                            Resource.Color.PUR_darkorchid,
+                            Resource.Color.purple,
+                            Resource.Color.blueviolet,
+                            Resource.Color.darkviolet,
+                            Resource.Color.darkorchid,
                         }
                 }
 

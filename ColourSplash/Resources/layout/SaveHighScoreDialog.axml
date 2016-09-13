@@ -3,17 +3,31 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@android:color/white">
-<!--   <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/button1" /> -->
-    <EditText
-        android:id="@+id/playerNameTextField"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:maxLength="3"
-     />
+        android:layout_height="fill_parent"
+        android:weightSum="3"
+        android:id="@+id/linearLayout1">
+        <NumberPicker
+            android:id="@+id/numberPicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1" />
+        <NumberPicker
+            android:id="@+id/numberPicker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1" />
+        <NumberPicker
+            android:id="@+id/numberPicker3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1" />
+    </LinearLayout>
 </LinearLayout>

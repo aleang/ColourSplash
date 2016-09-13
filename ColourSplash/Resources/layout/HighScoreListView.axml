@@ -6,28 +6,29 @@
     android:background="@android:color/white">
     <LinearLayout
         android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="2"
         android:id="@+id/linearLayout1">
         <TextView
             android:id="@+id/name"
-            android:layout_width="180dp"
+            android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:textSize="25dp"
             android:text="PLT"
             android:gravity="right"
             android:textAllCaps="true"
-            android:textColor="@color/BLU_cornflowerblue"
-            android:paddingRight="30px" />
+            android:textSize="20dp"
+            android:textColor="@color/darkviolet"
+            android:layout_weight="1"
+            android:paddingRight="10dp" />
         <TextView
             android:id="@+id/score"
-            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:textSize="25dp"
             android:text="25"
-            android:textColor="@color/BLU_cornflowerblue" />
+            android:paddingLeft="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/darkorchid" />
     </LinearLayout>
 </RelativeLayout>

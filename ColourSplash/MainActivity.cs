@@ -1,14 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
+using Android.Content.PM;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using ColourSplash.Fragments;
 
 namespace ColourSplash
@@ -16,6 +8,7 @@ namespace ColourSplash
     [Activity(
         Label = "Colour Splash",
         MainLauncher = true,
+        ScreenOrientation = ScreenOrientation.Portrait,
         Icon = "@drawable/icon",
         Theme = "@android:style/Theme.Material.Light")]
     public class MainActivity : Activity
